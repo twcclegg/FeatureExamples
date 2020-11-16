@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>net5.0</TargetFramework>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+
+    <ItemGroup>
+        <PackageReference Include="libphonenumber-csharp" Version="8.12.11" />
+        <PackageReference Include="Telephony.PhoneNumberUtil" Version="1.0.74" />
+    </ItemGroup>
+
+
+    <ItemGroup>
+      <None Remove="appsettings.json" />
+    </ItemGroup>
+
+</Project>
