@@ -68,7 +68,7 @@ namespace FeatureExamples
             };
             using var response = await HttpClient.SendAsync(request);
             return Points((await JsonSerializer.DeserializeAsync<RandomData>(await response.Content.ReadAsStreamAsync(),
-                SerializerOptions))!.Result.Random.Data);
+                SerializerOptions))!.Result!.Random!.Data!);
 
             static IEnumerable<Point> Points(IList<double> data)
             {

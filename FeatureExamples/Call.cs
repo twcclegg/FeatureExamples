@@ -15,6 +15,7 @@ namespace FeatureExamples
         public double Minutes { get; }
 
         public TimeSpan Duration => TimeSpan.FromMinutes(Minutes);
+
         public double Cost()
             => Duration.TotalMinutes * (Number, Duration) switch
             {
@@ -31,8 +32,5 @@ namespace FeatureExamples
                 ({CountryCode: 261}, _) => int.MaxValue,
                 (_, _) => .4
             };
-
-        public override string ToString() =>
-            $"To {Number} for {Duration.TotalMinutes} minutes";
     }
 }
