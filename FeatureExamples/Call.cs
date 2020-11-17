@@ -9,6 +9,12 @@ namespace FeatureExamples
     {
         public Call(PhoneNumber number, double minutes) => (Number, Minutes) = (number, minutes);
 
+        public void Deconstruct(out PhoneNumber number, out TimeSpan duration)
+        {
+            number = Number;
+            duration = Duration;
+        }
+
         [JsonConverter(typeof(PhoneNumberTextConverter))]
         public PhoneNumber Number { get; }
 
@@ -17,7 +23,7 @@ namespace FeatureExamples
         public TimeSpan Duration => TimeSpan.FromMinutes(Minutes);
 
         public double Cost()
-            => Duration.TotalMinutes * (Number, Duration) switch
+            => Duration.TotalMinutes * this switch
             {
                 var (_, d) when d.Ticks is < 0 => throw new InvalidOperationException(),
                 var (num, _) when num.CountryCode == 1 =>

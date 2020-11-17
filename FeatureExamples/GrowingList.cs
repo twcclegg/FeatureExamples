@@ -46,6 +46,6 @@ namespace FeatureExamples
         }
 
         public override string ToString()
-            => string.Join(", ", _list);
+            => string.Join("\n", _list);
     }
 }

@@ -11,6 +11,7 @@ var call = JsonSerializer.Deserialize<Call>("{\"Minutes\": 13,\"Number\": \"+121
 list.Add(call.Cost());
 list.Add(call.ToString());
 list.Add(await GetPi(100,100));
+list.Add(call.Duration.ToString()[^5..5]);
 if (list is not null)
     Console.WriteLine(list);
 
