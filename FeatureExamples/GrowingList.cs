@@ -1,12 +1,12 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Collections.Immutable;
 
 namespace FeatureExamples
 {
     public interface IEnumeratingList<T> : IList<T>
     {
-
         IEnumerator IEnumerable.GetEnumerator()
         {
             return GetEnumerator();
@@ -15,7 +15,7 @@ namespace FeatureExamples
 
     public class GrowingList<T> : IEnumeratingList<T>
     {
-        private readonly List<T> _list = new ();
+        private readonly List<T> _list = new();
 
         public IEnumerator<T> GetEnumerator()
             => _list.GetEnumerator();
