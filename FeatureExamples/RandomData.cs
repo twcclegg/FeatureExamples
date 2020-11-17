@@ -5,13 +5,7 @@ namespace FeatureExamples{
         public List<double>? Data { get; init; }
     }
 
-    public class Result
-    {
-        public Random? Random { get; init; }
-    }
+    public sealed record Result(Random? Random);
 
-    public class RandomData
-    {
-        public Result? Result { get; init; }
-    }
+    public sealed record RandomData(Result? Result);
 }
